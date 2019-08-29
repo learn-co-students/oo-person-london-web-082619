@@ -1,17 +1,17 @@
 class Person 
 
-    attr_accessor :bank_account
+    attr_accessor :bank_account, :happiness, :hygiene
     attr_reader :name 
 
 
-    def initialize(name)
+    def initialize(name, bank_account = 25, happiness = 8, hygiene = 8)
         @name = name 
-        @bank_account = 25
-        @happiness = 8
+        @bank_account = bank_account
+        @happiness = happiness 
         @hygiene = hygiene
     end 
 
-    def happiness= (happiness)  #.clamp(0,10)
+    def happiness= (happiness)
         if happiness > 10 
             @happiness = 10
         elsif happiness < 0 
@@ -32,7 +32,7 @@ class Person
     end 
 
     def clean?
-        @hygiene > 7
+        @hygiene > 7 
     end 
 
     def happy?
